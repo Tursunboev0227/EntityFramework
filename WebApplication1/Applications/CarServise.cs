@@ -60,7 +60,7 @@ namespace WebApplication1.Applications
             if (md != null)
             {
                 md.Brand = model.Brand;
-                md.Model = model.Model;
+                md.model = model.Model;
                 await _context.SaveChangesAsync();
                 return "updated";
             }

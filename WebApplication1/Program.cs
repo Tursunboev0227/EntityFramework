@@ -1,5 +1,6 @@
 
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Applications;
 using WebApplication1.Infrostructer;
 
 namespace WebApplication1
@@ -17,6 +18,8 @@ namespace WebApplication1
             {
                 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
+
+            builder.Services.AddScoped<ICarServise,CarServise>();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
